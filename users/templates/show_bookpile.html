@@ -1,0 +1,66 @@
+{%extends "base.html"%}
+
+{%block content%}
+<center>       
+           <div class="title">{{username_p}} Bookpile</div>
+             <div class="margin">
+                <div id="signup">
+                  <div id=content_page>
+                      <h3>&nbsp;I Have to Read...</h3>
+                        <ol>
+                            {%if not readbooks%}
+                                0 books.
+                                </br>
+                                {%if own_bookpile%}
+                                    </br>
+                                    Add a book to your bookpile! <a href="{%url create_book%}">Create</a> a book, add a book from our bookpile by clicking on its link in the <a href="{%url home%}">Homepage</a> or finish reading a book from your other list.
+                                {%endif%}
+                            {%endif%}
+                            {%for book in readbooks%}
+                                <li>
+                                    <a href="{%url show_book book.book.pk%}">{{book.book}}</a> by {{book.book.author}} &nbsp;|&nbsp;
+                                    {%if book.already_voted%}
+                                        rating: {{book.votes}} star{{book.votes|pluralize}}
+                                    {%else%}
+                                        Not rated yet
+                                    {%endif%}
+                                    {%if own_bookpile%}                    
+                                         | &nbsp;<a href="{%url delete_book book.book.pk%}"><img src="/static/error.gif"  width="10px" height="10px"></a>
+                                    {%endif%}       
+                                </li>
+                            {%endfor%}
+                        </ol>
+                        <br/>
+                        <h3>&nbsp;I Want to Read...</h3>
+                        <ol>
+                            {%if not notreadbooks%}
+                                0 books.
+                                </br>
+                                {%if own_bookpile%}
+                                    </br>
+                                    There are approximately 130 million books in the world today. Either you have read them all or you should add one.
+                                {%endif%}
+                            {%endif%}
+                            {%for book in notreadbooks%}
+                                <li>
+                                    <a href="{%url show_book book.book.pk%}">{{book.book}}</a> by {{book.book.author}} &nbsp;|&nbsp;
+                                    {%if own_bookpile%}
+                                        <a href="{%url change_read_book book.book.pk%}">Done Reading!</a> &nbsp;
+                                        | <a href="{%url delete_book book.book.pk%}"><img src="/static/error.gif"  width="10px" height="10px"></a>
+                                    {%endif%}                
+                                </li>
+                            {%endfor%}
+                        </ol>
+                        <br>
+                        {%if own_bookpile%}
+                            {%if last_read_book%}
+                                <center>The last book you have read is {{last_read_book.title}}</center>
+                            {%endif%}
+                        {%endif%}
+                  </div>
+                </div>
+             </div>
+           </div>
+        </div>
+</center>
+{%endblock%}

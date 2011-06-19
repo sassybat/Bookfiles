@@ -1,0 +1,39 @@
+{%extends "base.html"%}
+
+{%block content%}
+  <center>
+        <script type="text/javascript" src="/static/js/validarUser.js"></script>
+           <div class="title">Become a Bookphile</div>
+             <div class="margin">
+                <div id="signup">
+                  <div id=content_page>
+                   
+                     <div id=content_page_center>
+                   
+                      <form id="formUser" action="{%url register%}" method="POST" >
+                         {%csrf_token%}
+                         <table cellpadding="5">
+                             <tr>
+                               <td class="labelLeft"><label class="labelText" for="username">Username</label></td>
+                               <td class="field"><input class="text_field" type="text" name="username" id="username" value=""/></td>                <td class="status"></td> 
+                            </tr>
+                             <tr>
+                              <td class="labelLeft"><label class="labelText" for="password">Password</label></td>
+                              <td class="field"><input class="text_field" type="password"  name="password" id="password" value="" autocomplete="off" /></td>
+                              <td class="status"></td>
+                            </tr>
+                            <tr>
+                              <td class="labelLeft"><label class="labelText" for="Confirmar">Confirmation</label></td>
+                              <td class="field"><input class="text_field" type="password"  name="Confirmar" id="Confirmar" value="" autocomplete="off" /></td>
+                              <td class="status"></td>
+                            </tr>
+                            <tr><td><input type="submit" name="Submit" value="Register"></input></td></tr> 
+                        </table>
+                    </form>
+                  </div>
+                </div>
+             </div>
+           </div>
+        </div>
+</center>
+{%endblock%}

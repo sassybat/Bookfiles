@@ -1,0 +1,91 @@
+{%extends "base.html"%}
+{%block content%}
+ <div id=content_page>    
+    <div class="title">More about...</div>
+    <br/>
+    
+    <h1>{{book.title}}</h1>
+    <br/>
+   
+    <label>Author:  </label>{{book.author}}
+    <br/>
+    <br/>
+    <label>Summary: 
+    {%if no_summary%}
+        </label>
+       {{book.summary}}
+    {%else%}        
+        <a href="{%url edit_book book.pk%}">Can you please add a summary for this book?</a></label>
+    {%endif%}
+    <br/>
+    <br/>
+    <label>Average Rating:   </label>
+        {%if book.already_voted%}
+            {{book.get_average|floatformat:1}}
+        {%else%}
+            Not rated yet
+        {%endif%}
+    
+    {%if user.is_authenticated%}
+        {%if not inbookpile%}
+            <br/><br/>
+            <label><a href="{%url edit_book book.pk%}">Edit Book</a></label>
+            <br>
+            <br>            
+            <nav>
+                <label><a href="{%url add_unread_book book.pk%}">Want to read it&nbsp;</a>&nbsp;|
+                <a href="{%url add_read_book book.pk%}">Already read it&nbsp;</a></label>
+            </nav>
+            <br>
+        {%else%}
+            <nav>
+                This books is already in 
+                <a href="{%url show_bookpile user.username%}">urBookpile</a>
+                <br>
+                {%if already_voted%}  
+                    <label>You gave this book 
+                        {%for estrellitas in listaestrellitas%}
+                            <img src="/static/estrellita.png" width="15px" height="15px"/>
+                        {%endfor%}                    
+                    <label/>
+                {%endif%}        
+                {%if already_read%}     
+                    <form action="{%url vote_book book.pk%}" action="post" accept-chazrset="utf-8">
+                       <table> 
+                         <tr>
+                            <br/><p><select name="votes" id="votes">
+                             {%for code, star in stars%} 
+                             <option value="{{code}}">{{star}}</option>
+                             {%endfor%}</select>
+                            <input type="submit" value="Vote"> &nbsp; &nbsp;</p>        
+                        </table>       
+                    </form>  
+                {%endif%}              
+            </nav>
+        {%endif%}  
+    {%else%}
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <label>Become a
+         <a href="{%url register%}">Bookphile</a>
+         or login to add this book to your bookpile!</label>
+    {%endif%}  
+    
+    <br/>
+    <label>Bookphiles who added this book:
+    </br> &nbsp;
+    {%if not users_read%}
+        &nbsp;&nbsp;Be the first person to add this book to your bookpile!</label>
+    {%else%}
+        {%for user_read in users_read%}                   
+            <a href="{%url show_bookpile user_read.user.username%}">{{user_read.user.username}}</a>
+            {%if not forloop.last%}
+                &nbsp;|&nbsp;
+            {%endif%}   
+        {%endfor%}
+    {%endif%}
+    <br/>
+    <br/>
+{%endblock%}

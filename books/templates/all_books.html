@@ -1,0 +1,36 @@
+{%extends "base.html"%}
+
+{%block content%}
+    <div id="rightContainer">
+      <div id='contentLoad'>
+        <div id="content"> 
+           <div class="title">Bookfiles' Bookpile</div>
+             <div class="margin">
+                <div id="signup">
+                  <div id=content_page>
+                    <div class="styleTable">
+                    <h2>Catalog, Organize, Rate, Share, Discover and Love Books.</h2>
+                    <br/>
+                   
+                    <ol>
+                        {%for book in books%}
+                            <li>
+                                <a href="{%url show_book book.pk%}">{{book.title}}</a> by {{book.author}} &nbsp; |&nbsp;
+                                {%if book.already_voted%}                  
+                                    rating: {{book.get_average|floatformat:1}}
+                                    
+                                {%else%}
+                                    Not rated yet
+                                {%endif%}
+                            </li>
+                        {%endfor%}
+                    </ol>
+                 </div>
+                </div>
+             </div>
+          </div>
+        </div>
+     </div>
+   </div>
+</div>
+{%endblock%}

@@ -1,0 +1,387 @@
+body{
+    font-family: Arial,Helvetica, Verdana;/*"lucida grande",tahoma,verdana,arial,sans-serif;*/
+    font-size: 14px;
+    color: #616;
+    margin:0;
+}
+/*-----------Barra-------------------------------------------------------------*/
+#bar{
+    background:url("/static/fondo.png") repeat scroll 0 0 transparent;
+    position: fixed;
+    height:150px;
+    top: 0px;
+    left: 0px;
+    width:100%;
+	z-index:1000;
+/*    border-bottom: 1px solid white;*/
+}
+
+#global_content_header{
+    margin: auto;
+    width:981px;
+}
+#global_content_header label{   
+    color: #ffffff;/* #B0D730;#1FC62A;text-shadow:0 1px 0 #ffffff;*/
+    font-size: 0.95em;
+    font-weight: bold;
+    text-transform: capitalize;
+    /*text-shadow: 0 1px 0 #1FC62A;*/
+    padding-right:8px;
+}
+
+#content_header{
+    margin:0px;
+}
+
+#right_header{
+    float:right;
+    font-size:0.9em;
+    font-weight: bold;
+    padding-top:2px;
+    margin-left:700px;
+    
+}
+#menu_header{
+    float:right;
+    margin:20px; 
+    padding:0px; 
+    list-style:none; 
+    color:white; 
+    line-height:30px;   
+    padding-right:100px
+    padding-left:20px;
+
+}
+   
+#menu_header li a{
+    display: block;
+    text-align: center;
+    padding: 0 2px;
+    width:81px;
+}
+}
+#menu_header  li { 
+    cursor:pointer; 
+    float:left;
+    position:relative;
+    padding:0px 10px;
+}
+
+
+/*-----------------------------------------------------------------------*/
+
+#user_menuleft{
+    float:left;
+    margin-right:10px;
+    margin-left:30px
+}
+#user_menuleft ul{
+    list-style:none;
+    line-height:29px
+    margin:0;
+    padding:5px;
+}
+#user_menuleft li{
+    float:left;
+    padding: 0 1px;
+}
+.link_menuleft{
+    color:white;
+    text-decoration:none;
+    font-size:12px;
+}
+#user_menuleft li a{
+    display: block;
+    text-align: center;
+    padding: 5px 2px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    font: verdana;
+    
+}
+/*-----------------------------------------------------------------------*/
+#user_menu{
+    float:right;
+    margin-right:25px;
+   
+}
+#user_menu ul{
+    list-style:none;
+    line-height:29px
+    margin:0;
+    padding:5px;
+}
+#user_menu li{
+    float:left;
+    padding: 0 1px; 
+ }
+
+.link_menu{
+    color:white;
+    text-decoration:none;
+    font-size:12px;
+}
+#user_menu li a{
+    background: url("/static/menu_bt.gif") no-repeat scroll center center transparent;
+    display: block;
+    text-align: center;
+    padding: 0 2px;
+    width:81px;
+}
+
+
+/*----------------------Logo------------------------------------------------------------ */
+#barLogo{
+    margin:0px;
+    padding-top:40px;
+    background:url("/static/fondo.png") repeat scroll 0 0 transparent;
+    width:100%;
+    height:100%
+    border-bottom: 1px solid #ffffff;
+}
+#logo{
+    margin:auto;
+    height:115px;
+    width: 960px;
+}
+#logo #logoLeft{
+    float:left;
+    padding-left:20px;
+    width:200px;
+}
+#logo #logoRight{
+    float:right;
+    margin-right:10px;
+}
+
+
+/*-----------------------Fondo principal----------------------------------------*/
+#main{
+    background:url("/static/fondo1.jpg")  repeat-x #FFFFFF;
+}
+#container{
+    margin:auto;
+    width: 960px;
+    min-height:500px;
+}
+#mainContainer{
+    padding:30px 20px;
+}
+#mainContent{
+    background:url(/static/main_content_bg.jpg) no-repeat scroll center top  #FFFFFF; 
+/*    margin-top:20px;*/
+    margin-bottom:50px;
+    height:100%;
+    padding:20px
+    
+}
+#rightContainer{
+    float:center;
+    min-height:450px;
+    width:100%;
+    
+}
+.title{
+    background:url(/static/titulo.png) repeat-x ;
+    width: 100%;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    color: #FFFFFF;
+    padding-bottom: 7px;
+    padding-top: 5px;
+    text-shadow:1px 1px 2px #000000;
+    text-transform:capitalize;
+    -moz-box-shadow:0px 5px 10px #DDDDDD;
+    -webkit-box-shadow:0px 5px 10px #DDDDDD;
+    box-shadow:0px 5px 10px #DDDDDD;
+}
+.styleTable table{
+    border-collapse: collapse;
+    border-spacing: 0; 
+}
+#signup{
+    margin:auto;
+    padding-top:15px;
+    width:100%;
+}
+.margin{
+    margin: 0 10px 10px 10px;
+}
+
+
+/*-------------------------Contenido de la pagina---------------------*/
+
+#content_page{
+    width: 100%;
+    text-align: left;
+    color: #616;
+    padding-bottom: 50px;
+    padding-top: 5px;
+    font-size: 14px;
+    font: verdana;
+    line-height:20px;
+    -moz-box-shadow:0px 5px 10px #DDDDDD;
+    -webkit-box-shadow:0px 5px 10px #DDDDDD;
+    box-shadow:0px 5px 10px #DDDDDD;
+}
+#content_page label{
+    padding-left:100px;
+    font-weight:bold;
+    font-size: 15px;
+    font: verdana;    
+}
+#content_page h1{
+    float:center;
+    text-align:center;
+    font-weight:bold;
+    font-size: 20px;
+    font: verdana;  
+    text-transform:capitalize;  
+}
+#content_page h3{
+    float:center;
+    text-align:left;
+    font-weight:bold;
+    font-size: 14px;
+    font: verdana;  
+    text-transform:capitalize;  
+    padding-left:80px;
+}
+#content_page_center{
+    float:center;
+    width: 600px;
+    text-align: center;
+    color: #616;
+    padding-left:260px;
+    padding-top:20px;
+    padding-bottom:10px;
+      
+}
+#content_page_center label{
+    float:left;
+    padding-left:0px;
+    font-weight:bold;
+    font-size: 15px;
+    font: verdana;    
+}
+#content_page h2{
+    font-size: 15px;
+    float:center;
+    padding-left:230px;
+    font-weight:bold;
+    text-transform:capitalize;
+        
+}
+
+
+/*-----------------Mensajes-------------------------------------------------*/
+.msj{
+    color: #666666;
+    font-size: 13px;
+    border: 1px solid #DDDDDD;
+    padding: 4px 5px 4px 55px;
+    margin:0 10px 15px
+}
+.msj#msj{
+    background: url("/static/agregado.gif") no-repeat scroll  25px 50% #FFFFCC;
+}
+.msj#error {
+    background: url("/static/error.gif") no-repeat scroll  25px 50% #FFCFCF;
+    border:1px solid #E5A3A3;
+    color: #801B1B;
+}
+label.error {
+    background: url("/static/error.gif") no-repeat scroll  0px 50% #FFCFCF;
+    border:1px solid #E5A3A3;
+    color: #801B1B;
+    font-size:8px; 
+    padding:5px 5px 5px 20px;
+    background-position: left;
+    vertical-align: middle
+    text-align:right;
+    -moz-border-radius:5px;
+}
+label.checked{
+    background: url("/static/correcto.gif") no-repeat;
+    background-position: left;
+    border:1px solid transparent;
+    font-size: 0.7em;    padding:0px;
+    padding: 10px;
+}
+
+/*---------------------Campos----------------------------------*/
+
+.text_field{
+    border:1px solid gray;
+    padding:7px;
+    width:220px;
+    -moz-border-radius:5px;
+}
+.textarea-peq{
+    min-height:5em;
+    max-height:5em;
+    resize: none;
+}
+/*-----------------------Boton---------------------------------- */
+input[type="submit"]{
+    background:url(/static/button.gif) repeat-x #DDDDDD;
+    border-color:#DDDDDD #DDDDDD #CCCCCC;
+    border-style: solid;
+    border-width: 1px;
+    padding:7px;
+    font-size:13px;
+    font-weight:normal;
+    color: #333333;
+    text-shadow:1px 1px 0 #FFFFFF;
+    cursor: pointer;
+    -moz-border-radius: 5px; /* Firefox */
+    -webkit-border-radius: 5px; /* Safari and Chrome */
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus{
+    background : url("/static/btn.png") repeat-x #641176;
+    border-color:#D206BC #D206BC #D206BC;
+    border-style: solid;
+    border-width: 1px;
+/*    border: 1px solid #3399DD;*/
+    color:#FFFFFF; 
+    text-shadow:0 -1px 0 #3399DD;
+}
+/*----------------------------ComboBox---------------------------------*/
+
+
+select{
+    background:url(/static/button.gif) repeat-x #DDDDDD;
+    border-color:#DDDDDD #DDDDDD #CCCCCC;
+    border-style: solid;
+    border-width: 1px;
+    padding:7px;
+    font-size:13px;
+    font-weight:normal;
+    color: #333333;
+    text-shadow:1px 1px 0 #FFFFFF;
+    cursor: pointer;
+    margin-left:100px; 
+    font:verdana;
+    -moz-border-radius: 5px; /* Firefox */
+    -webkit-border-radius: 5px; /* Safari and Chrome */
+   
+}
+select:hover,
+select:focus{
+    background : url("/static/btn.png") repeat-x #641176;
+    border-color:#D206BC #D206BC #D206BC;
+    border-style: solid;
+    border-width: 1px;
+/*    border: 1px solid #3399DD;*/
+    color:#FFFFFF; 
+    text-shadow:0 -1px 0 #3399DD;
+}
+
+
+
+
