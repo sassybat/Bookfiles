@@ -17,7 +17,9 @@ def register(request):
             existente=User.objects.filter(username=username)
             if not existente:
                 if form.is_valid():
-                    user = User.objects.create_user(username =username, email='None', password = password)
+                    user = User.objects.create_user(username =username, email='None', password = password)                    
+                    authenticated = authenticate(username = username, password = password)
+                    auth.login(request, authenticated)
                     user.save()
                     return redirect('show_books')
             else:
