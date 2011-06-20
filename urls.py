@@ -10,5 +10,5 @@ from django.shortcuts import HttpResponseRedirect
 urlpatterns = patterns('',
     url(r'^$', lambda x: HttpResponseRedirect('/books'), name='home'),
     url(r'^books/', include('books.urls')),
-    url(r'^users/', include('bookfiles.users.urls')),
+    url(r'^users/', include('users.urls')),
 )
