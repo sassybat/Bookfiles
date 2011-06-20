@@ -322,6 +322,7 @@ label.checked{
 .textarea-peq{
     min-height:5em;
     max-height:5em;
+    overflow:scroll;
     resize: none;
 }
 /*-----------------------Boton---------------------------------- */
